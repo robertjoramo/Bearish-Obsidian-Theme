@@ -1,0 +1,391 @@
+/* SHAMELESS COPY FROM */
+/*
+Minimal
+Things
+Border
+Maple
+Red Graphite
+*/
+
+body {
+    /* Accent HSL values */
+    --accent-h: 2;
+    --accent-s: 56%;
+    --accent-l: 54%;
+/*
+    --bear-red: HSL(2, 56%, 54%);
+    --bear-yellow: HSL(41, 88%, 71%);
+*/
+    --bear-red: #cb4c48;
+    --bear-yellow: #f6cd74;
+
+    --checklist-done-decoration: none; /* Remove strikthrough for done checklist items */
+    --checklist-done-color: var(--text-faint); /* Make completed tasks more faint in colo. Org: text-muted */
+    --font-text-override: 'Avenir';
+    --italic-color: var(--color-accent);
+
+    --titlebar-background-focused: var(--titlebar-background);
+    
+    --colorful-headings: var(--color-accent);
+
+    --icon-opacity-color: 1;
+
+}
+
+
+.theme-dark {
+    --accent-h: 41;
+    --accent-s: 88%;
+    --accent-l: 71%;
+
+    --alt-bear-accent: var(--bear-red);
+
+    --text-on-accent: #000; 
+
+    /*
+    Default base color: #1e232f
+    */
+}
+
+.theme-dark:is(.alt-bear-bg) {
+    --background-primary: hsl(222, 22%, 20%);
+    --tab-container-background: hsl(222, 22%, 20%);
+    --titlebar-background: hsl(222, 22%, 10%);
+    --ribbon-background: var(--titlebar-background);
+    --background-secondary:hsl(222, 22%, 15%);
+    --background-secondary-alt:hsl(222, 22%, 3%);
+}
+
+.theme-light {
+    --accent-h: 2;
+    --accent-s: 56%;
+    --accent-l: 54%;
+
+    --alt-bear-accent: var(--bear-yellow);
+}
+
+
+.theme-light:is(.alt-bear-bg) {
+
+
+
+    --tab-container-background: hsl(222, 22%, 20%);
+    --titlebar-background: hsl(204, 6%, 22%);
+    --ribbon-background: var(--titlebar-background);
+    --background-secondary:hsl(204, 6%, 17%);
+    --background-secondary-alt:hsl(204, 6%, 90%);
+
+    --divider-color: var(--titlebar-background);
+
+    --nav-item-color: #C1C5C8;
+    --icon-color: var(--nav-item-color);
+    --icon-color-focused: var(--color-accent);
+    --titlebar-text-color: var(--nav-item-color);
+    --titlebar-text-color-focused: var(--titlebar-text-color);
+    --tab-divider-color: #292c2e;
+
+    --ribbon-background-collapsed: var(--titlebar-background);
+
+
+    /*
+    Default base color: #292C2E
+    */
+}
+
+:is(.alt-bear-bg) .nav-folder.mod-root > .nav-folder-children .tree-item-self:hover {
+    color:var(--nav-item-color);
+}
+
+
+
+/* ########## ######## ########## */ 
+/* ##########   ICON   ########## */ 
+/* ########## ######## ########## */ 
+:is(.alt-bear-bg).is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+    color: var(--color-accent);
+}
+
+:is(.alt-bear-bg).is-focused .workspace-tab-header {
+    color: var(--nav-item-color);
+}
+
+:is(.alt-bear-bg).is-focused .workspace-tab-header.is-active {
+    color: var(--tab-text-color-focused-active);
+}
+
+
+:is(.alt-bear-bg) .vertical-tab-nav-item {
+    color: var(--nav-item-color);
+}
+
+.vertical-tab-header-group-title {
+    color: var(--color-accent);
+}
+
+
+/* File Icon */
+body:is(.tree-icons) .nav-file-title::before {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 -960 960 960'%3e%3cg stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.333'%3e%3cpath d='M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z'/%3e%3c/g%3e%3c/svg%3e");
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: var(--color-accent);
+    margin-left: calc(-1 * var(--size-4-5));
+    opacity: var(--icon-opacity-color);
+}
+
+/* Folder Close Icon */
+body:is(.tree-icons) .is-collapsed .tree-item-icon.collapse-icon {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 -960 960 960'%3e%3cpath stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.333' d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z'/%3e%3c/svg%3e");
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: var(--color-accent);
+    opacity: var(--icon-opacity-color);
+}
+
+/* Folder Open Icon */
+body:is(.tree-icons) .tree-item-icon.collapse-icon {
+    -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 -960 960 960'%3e%3cpath stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.333' d='M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640H447l-80-80H160v480l96-320h684L837-217q-8 26-29.5 41.5T760-160H160Zm84-80h516l72-240H316l-72 240Zm0 0 72-240-72 240Zm-84-400v-80 80Z'/%3e%3c/svg%3e");
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: var(--color-accent);
+    opacity: var(--icon-opacity-color);
+}
+
+
+/* Remove "chevron" from folder list  */
+body:is(.tree-icons) .nav-folder-title .collapse-icon svg.svg-icon {
+    display:none;
+}
+
+/* Remove Vault name */
+.nav-folder.mod-root > .nav-folder-title {
+    color:var(--color-accent);
+}
+
+body:not(.show-vault-name) .nav-folder.mod-root > .nav-folder-title {
+    display:none;
+}
+
+
+/* Add Color to selected note in note tree list */
+body:not(.is-grabbing) .nav-file-title.is-active:hover, .nav-file-title.is-active {
+    color: var(--text-on-accent);
+    background-color: var(--color-accent);
+    opacity: 1;
+}
+
+/* Change the icon color of the selected note in note tree list */
+body:is(.tree-icons) .nav-file-title.is-active::before{
+  background-color: var(--text-on-accent);
+}
+
+
+
+/* ########## ######## ########## */ 
+/* ########## HEADINGS ########## */ 
+/* ########## ######## ########## */ 
+
+body:is(.colorful-headers) .cm-header {
+    color: var(--colorful-headings);
+}
+
+/*
+.cm-header-1 {
+    color: var(--color-accent);
+}
+
+.cm-header-2 {
+    color: var(--color-accent);
+}
+
+.cm-header-3 {
+    color: var(--color-accent);
+}
+
+.cm-header-4 {
+    color: var(--alt-bear-accent);
+}
+
+.cm-header-5 {
+    color: var(--alt-bear-accent);
+}
+
+.cm-header-6 {
+    color: var(--alt-bear-accent);
+}
+*/
+
+/* ########## ######## ########## */ 
+/* ########## CHECKBOX ########## */ 
+/* ########## ######## ########## */ 
+
+/* Remove default checkbox marker */
+input[data-task="/"]:checked, input[data-task="-"]:checked, input[data-task=">"]:checked {
+    --checkbox-marker-color: transparent;
+}
+
+/* --------- "/" Todo --------- */ 
+input[data-task="/"]:checked, li[data-task="/"]>input:checked, li[data-task="/"]>p>input:checked {
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+input[data-task="/"]:checked:after, li[data-task="/"]>input:checked:after, li[data-task="/"]>p>input:checked:after {
+    top: 0;
+    left: 0;
+    content: " ";
+    display: block;
+    position: absolute;
+    background-color: var(--checkbox-color);
+    border: 1px solid var(--checkbox-color);
+    width: calc(50% - 2px);
+    height: 100%;
+    -webkit-mask-image: none;
+}
+
+/* --------- "-" Todo --------- */ 
+input[data-task="-"]:checked, li[data-task="-"]>input:checked, li[data-task="-"]>p>input:checked {
+    color: var(--text-faint);
+    background-color: var(--checkbox-color);
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='currentColor'%3E%3Cpath d='M160-440v-80h640v80H160Z' /%3E%3C/svg%3E");
+}
+
+body:not(.tasks) .markdown-preview-view ul li[data-task="-"].task-list-item.is-checked, body:not(.tasks) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="-"]), body:not(.tasks) li[data-task="-"].task-list-item.is-checked {
+    color: var(--text-faint);
+    text-decoration: line-through solid var(--text-faint) 1px;
+}
+
+
+/* --------- ">" Todo --------- */ 
+input[data-task=">"]:checked, li[data-task=">"]>input:checked, li[data-task=">"]>p>input:checked {
+    color: var(--text-faint);
+    background-color: var(--checkbox-color);
+    /* ICON: -> */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='currentColor'%3E%3Cpath d='M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z' /%3E%3C/svg%3E");
+}
+
+body:not(.tasks) .markdown-preview-view ul li[data-task=">"].task-list-item.is-checked, body:not(.tasks) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=">"]), body:not(.tasks) li[data-task=">"].task-list-item.is-checked {
+    color: var(--text-faint);
+}
+
+body:is(.colorful-icons) .nav-buttons-container > .nav-action-button {
+    color: var(--color-accent);
+    opacity: var(--icon-opacity-color);
+}
+
+
+/* ########## ######## ########## */ 
+/* ########## New Note ########## */ 
+/* ########## ######## ########## */ 
+
+body:is(.new-note-btn) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    box-shadow: var(--input-shadow);
+    border-radius: var(--button-radius);
+    margin-left: -20px;
+    width: 100px;
+    padding: var(--size-2-3);
+    opacity: var(--icon-opacity);
+}
+
+body:is(.new-note-btn) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type::after {
+    content: "New Note";
+    font-size: var(--font-ui-small);
+    margin-left: auto;
+}
+
+body:is(.new-note-btn) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type:hover {
+    opacity: 1;
+}
+
+
+body:is(.new-note-btn):not(.colorful-icons) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type {
+    background-color: var(--icon-color);
+    color: var(--text-on-accent);
+    box-shadow: var(--input-shadow);
+    border-radius: var(--button-radius);
+    margin-left: -20px;
+    width: 100px;
+    padding: var(--size-2-3);
+    opacity: var(--icon-opacity);
+}
+
+body:is(.new-note-btn):not(.colorful-icons) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type::after {
+    content: "New Note";
+    font-size: var(--font-ui-small);
+    margin-left: auto;
+}
+
+body:is(.new-note-btn):not(.colorful-icons) .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container .clickable-icon.nav-action-button:first-of-type:hover {
+    opacity: 1;
+}
+
+
+/* @settings
+
+name: Settings
+id: bearish-style
+settings:
+    - 
+        id: show-vault-name
+        title: Show Vault Name
+        description: Show the name of the vault at the top of the files list
+        type: class-toggle
+        default:  false
+
+    - 
+        id: new-note-btn
+        title: Big New Note Button
+        description: Bigger new note button. Always colored to accent color.
+        type: class-toggle
+        default:  false
+    - 
+        id: tree-icons
+        title: File & Folder Icons
+        description: Show File & Folder Icons
+        type: class-toggle
+        default:  true
+    - 
+        id: colorful-headers
+        title: Use colorful headers
+        description: Enable colored headers. Will use accent color, or color specified below
+        type: class-toggle
+        default:  true
+    - 
+        id: colorful-icons
+        title: Use colorful icons
+        description: Use colors for new note, folder, sort and collaps icons. Does not affect file and folder icons.
+        type: class-toggle
+        default:  true
+    - 
+        id: alt-bear-bg
+        title: Bear Backgournd
+        description: Use background colors that are closer to Bear Notes.
+        type: class-toggle
+        default:  false
+    - 
+        id: colorful-headings
+        title: Headings Color
+        description: Choose heading color for light and dark mode. Reseting color will match it to current accent color.
+        type: variable-themed-color
+        format: hex
+        default-light: '#'
+        default-dark: '#'
+    - 
+        id: my-info-text
+        title: Accent color
+        description: "Accent color can be changed from the default *Appearance* menu. <br/> Default Light: '#cb4c48' <br/> Default Dark: '#f6cd74' "
+        type: info-text
+        markdown: true
+*/
+
+/* To fix issue where reset button was not correct color and readable */
+.theme-light .themed-color-wrapper > .theme-dark > .pickr-reset > button {
+    background-color: #FFF;
+}
