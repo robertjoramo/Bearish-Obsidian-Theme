@@ -1,5 +1,5 @@
 # Bearish
-A simple Obsidian theme based on Bear notes.
+A simple Obsidian theme based on Bear notes, with minor visual and quality of life changes.
 ## Images
 ![lightv1](https://github.com/robertjoramo/Bearish-Obsidian-Theme/assets/2562283/546bd80b-675e-4c2e-8f2c-f800e22ae9a4)
 ![dark v2](https://github.com/robertjoramo/Bearish-Obsidian-Theme/assets/2562283/36246c99-18cb-41f3-887b-ecad4b9ab988)
