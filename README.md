@@ -1,3 +1,4 @@
+# DISCONTINUED
 # Bearish
 A simple Obsidian theme based on Bear notes, with minor visual and quality of life changes.
 ## Images
